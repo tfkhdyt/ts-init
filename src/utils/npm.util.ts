@@ -23,7 +23,7 @@ export const setScript = () => {
     try {
       writeFileSync(
         path.join(process.cwd(), 'package.json'),
-        JSON.stringify(newConfig)
+        JSON.stringify(newConfig, null, 2)
       )
     } catch (error) {
       console.log(error)
