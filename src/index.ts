@@ -3,7 +3,7 @@ import { projectName, git, prettier } from './configs/cli.config'
 
 import cd from './utils/cd.util'
 import mkdir from './utils/mkdir.util'
-import gitInit from './utils/git.util'
+import { gitInit, createGitIgnore } from './utils/git.util'
 import { init, installDep } from './utils/pacman.util'
 import { tsInit } from './utils/ts.util'
 import { setScript } from './utils/npm.util'
@@ -20,6 +20,7 @@ cd(projectName)
 
 if (git) {
   gitInit()
+  createGitIgnore()
 }
 
 init()

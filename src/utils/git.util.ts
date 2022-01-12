@@ -1,7 +1,8 @@
-import { exec, execSync } from 'child_process'
+import { execSync } from 'child_process'
+import { writeFileSync } from 'fs'
 import { processNumber, setProcessNumber } from '../configs/cli.config'
 
-const gitInit = (): void => {
+export const gitInit = (): void => {
   console.log(`[${processNumber}] Initializing git...`)
   setProcessNumber(processNumber + 1)
   try {
@@ -13,4 +14,17 @@ const gitInit = (): void => {
   }
 }
 
-export default gitInit
+export const createGitIgnore = (): void => {
+  console.log(`[${processNumber}] Creating .gitignore...`)
+  setProcessNumber(processNumber + 1)
+  try {
+    writeFileSync(
+      './.gitignore',
+      `**/node_modules
+**/build`
+    )
+  } catch (err) {
+    console.error(err)
+    process.exit(1)
+  }
+}
