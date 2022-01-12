@@ -1,8 +1,8 @@
 export const scripts = {
   npm: {
-    init: 'npm init'
+    init: 'npm init',
   },
   yarn: {
-    init: 'yarn init'
-  }
+    init: 'yarn init',
+  },
 }
