@@ -21,7 +21,7 @@ const setScript = () => {
                 singleQuote: true,
             }, main: './src/index.ts' });
         try {
-            (0, fs_1.writeFileSync)(path_1.default.join(process.cwd(), 'package.json'), JSON.stringify(newConfig));
+            (0, fs_1.writeFileSync)(path_1.default.join(process.cwd(), 'package.json'), JSON.stringify(newConfig, null, 2));
         }
         catch (error) {
             console.log(error);
