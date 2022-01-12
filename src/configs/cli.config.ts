@@ -5,6 +5,10 @@ const packageManager: string = argv.yarn ? 'yarn' : 'npm'
 const git: boolean = argv.git
 const yes: boolean = argv.y
 const prettier: boolean = argv.p
+let processNumber: number = 1
+const setProcessNumber = (number: number) => {
+  processNumber = number
+}
 
 if (!projectName) {
   console.error('You should pass the project name!')
@@ -16,5 +20,7 @@ export {
   packageManager,
   git,
   yes,
-  prettier
+  prettier,
+  processNumber,
+  setProcessNumber,
 }

@@ -6,6 +6,7 @@ import mkdir from './utils/mkdir.util'
 import gitInit from './utils/git.util'
 import { init, installDep } from './utils/pacman.util'
 import { tsInit } from './utils/ts.util'
+import { setScript } from './utils/npm.util'
 
 console.log('Project Name    : ' + projectName)
 // console.log('Package Manager : ' + packageManager)
@@ -30,3 +31,9 @@ mkdir('build')
 mkdir('src')
 
 tsInit()
+
+// setTsConfig()
+
+setScript()
+
+console.log(`\n${projectName} has been created!`)
