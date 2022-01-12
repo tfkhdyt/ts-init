@@ -8,7 +8,11 @@ const mkdir = (projectName: string): void => {
     console.error('ERROR: Project is already exists!')
     process.exit(1)
   } else {
+    console.log(`Creating ${projectName}...`)
     fs.mkdirSync(projectName)
+    if (projectName === 'src') {
+      fs.writeFileSync('./src/index.ts', "console.log('Hello world!')")
+    }
   }
 }
 

@@ -6,6 +6,7 @@
   "devDependencies": {
     "@types/node": "^17.0.8",
     "@types/yargs": "^17.0.8",
+    "prettier": "^2.5.1",
     "tsc-watch": "^4.6.0",
     "typescript": "^4.5.4"
   },
@@ -13,7 +14,8 @@
     "yargs": "^17.3.1"
   },
   "scripts": {
-    "dev": "tsc-watch --onSuccess 'node ./build/index.js bruh --yarn --git --yes'"
+    "dev": "tsc-watch --onSuccess 'node ./build/index.js bruh --yarn --git --yes'",
+    "start": "node ./build/index.js"
   },
   "prettier": {
     "semi": false,

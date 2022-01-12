@@ -4,7 +4,8 @@ import { projectName, git, prettier } from './configs/cli.config'
 import cd from './utils/cd.util'
 import mkdir from './utils/mkdir.util'
 import gitInit from './utils/git.util'
-import { init } from './utils/pacman.util'
+import { init, installDep } from './utils/pacman.util'
+import { tsInit } from './utils/ts.util'
 
 console.log('Project Name    : ' + projectName)
 // console.log('Package Manager : ' + packageManager)
@@ -21,3 +22,11 @@ if (git) {
 }
 
 init()
+
+installDep(prettier)
+
+mkdir('build')
+
+mkdir('src')
+
+tsInit()

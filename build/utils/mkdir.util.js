@@ -12,7 +12,11 @@ const mkdir = (projectName) => {
         process.exit(1);
     }
     else {
+        console.log(`Creating ${projectName}...`);
         fs_1.default.mkdirSync(projectName);
+        if (projectName === 'src') {
+            fs_1.default.writeFileSync('./src/index.ts', "console.log('Hello world!')");
+        }
     }
 };
 exports.default = mkdir;
