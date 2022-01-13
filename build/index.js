@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const cli_config_1 = require("./configs/cli.config");
 const cd_util_1 = __importDefault(require("./utils/cd.util"));
 const mkdir_util_1 = __importDefault(require("./utils/mkdir.util"));
-const git_util_1 = __importDefault(require("./utils/git.util"));
+const git_util_1 = require("./utils/git.util");
 const pacman_util_1 = require("./utils/pacman.util");
 const ts_util_1 = require("./utils/ts.util");
 const npm_util_1 = require("./utils/npm.util");
@@ -19,7 +19,8 @@ console.log('Prettier        : ' + cli_config_1.prettier + '\n');
 (0, mkdir_util_1.default)(cli_config_1.projectName);
 (0, cd_util_1.default)(cli_config_1.projectName);
 if (cli_config_1.git) {
-    (0, git_util_1.default)();
+    (0, git_util_1.gitInit)();
+    (0, git_util_1.createGitIgnore)();
 }
 (0, pacman_util_1.init)();
 (0, pacman_util_1.installDep)(cli_config_1.prettier);
